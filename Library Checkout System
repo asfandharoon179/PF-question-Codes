@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+using namespace std;
+void displayBooks(int bookID[], string bookTitle[], bool available[]) {
+    cout << "\nAvailable Books:\n";
+    for (int i = 0; i < 10; i++) {
+        cout << bookID[i] << ". " << bookTitle[i]
+            << " | Available: " << (available[i] ? "Yes" : "No") << endl;
+    }
+}
+void checkoutBook(int bookID[], string bookTitle[], bool available[]) {
+    int id;
+    cout << "Enter the ID of the book you want to check out: ";
+    cin >> id;
+    if (id < 1 || id > 10) {
+        cout << "Invalid Book ID. Please try again.\n";
+        return;
+    }
+    if (!available[id - 1]) {
+        cout << "This book has already been checked out.\n";
+        return;
+    }
+    available[id - 1] = false;
+    cout << "Book with ID " << id << " (" << bookTitle[id - 1]
+        << ") has been checked out successfully.\n";
+}
+int main() {
+    int bookID[10] = { 1,2,3,4,5,6,7,8,9,10 };
+    string bookTitle[10] = { "Book A","Book B","Book C","Book D","Book E",
+                            "Book F","Book G","Book H","Book I","Book J" };
+    bool available[10] = { true,true,true,true,true,true,true,true,true,true };
+
+    cout << "Welcome to the Library Book Checkout System!\n";
+
+    while (true) {
+        cout << "\nMenu:\n";
+        cout << "1. Display available books\n";
+        cout << "2. Check out a book\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+
+        int choice;
+        cin >> choice;
+
+        if (choice == 1) {
+            displayBooks(bookID, bookTitle, available);
+        }
+        else if (choice == 2) {
+            checkoutBook(bookID, bookTitle, available);
+        }
+        else if (choice == 3) {
+            cout << "Exiting the program. Thank you!\n";
+            break;
+        }
+        else {
+            cout << "Invalid choice. Please try again.\n";
+        }
+    }
+
+    return 0;
+}
