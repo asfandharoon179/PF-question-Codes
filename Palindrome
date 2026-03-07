@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int num, revnum = 0, orgnum, rem;
+	cout << "Enter the number";
+	cin >> num;
+	orgnum = num;
+	while (num != 0) {
+		rem = num % 10;
+		revnum = revnum * 10 + rem;
+		num =num / 10;
+	}
+	if (orgnum == revnum) {
+		cout << "It is an palindrome";
+	}
+	else {
+		cout << "It is not an palindrome";
+	}
+	return 0;
+}
