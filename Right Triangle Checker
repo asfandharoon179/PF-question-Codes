@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int main() {
+	double a=0, b=0, c=0,p;
+	char ch;
+	int 	counterX = 0;
+	int counterif = 0;
+	do {
+		cout << "Please Enter three sides of trianlge:\n";
+		cin >> a;
+		cin >> b;
+		cin >> c;
+		if (c * c == a * a + b * b || a * a == c * c + b * b || b * b == a * a + c * c)
+		{
+			cout << "It is a right  trianlge\n";
+			p = a + b + c;
+			cout << "Perimeter = " << p << endl;
+			counterif++;
+		}
+		else
+		{
+			cout << "It is not a right triangle\n";
+			cout << endl;
+		}
+		cout << "Do you want to continue(Y/N)\n" << endl;
+		cin >> ch;
+		counterX++;
+	}
+	while (ch == 'Y' || ch == 'y');
+	cout << "You Entered\n";
+	cout << " Total  Triangles Entered = " << counterX;
+	cout << endl;
+	cout << "Total Right Triangle Entered = " << counterif;
+	return 0;
+}
