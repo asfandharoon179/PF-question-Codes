@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+/*void EnterMarks(int arr[], int size)
+{
+
+}
+double CalculateAverage(int arr[], int size) 
+{
+
+}
+int FindHighest(int arr[], int size)
+{
+
+}
+int countPass(int arr[], int size)
+{
+
+}*/
+int main()
+{
+	int n;
+	cout << "Enter the number of students\n";
+	cin >> n;
+	int arr[100];
+	cout << "Enter Marks\n";
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	} 
+	cout << endl;
+
+	cout << "Add\n";
+		int y=arr[0] + arr[1];
+		cout << y;
+		cout << endl;
+
+		cout << "Sub\n";
+		int x = arr[0] - arr[1];
+		cout << x;
+		cout << endl;
+
+		cout << "div\n";
+		int q = arr[0] / arr[1];
+		cout << q;
+		cout << endl;
+
+		cout << "Multiiply\n";
+		int m= arr[0] * arr[1];
+		cout << m;
+		cout << endl;
+
+		cout << "Moduals or Remainder\n";
+		int r = arr[0] % arr[1];
+		cout << r;
+
+	return 0;
+}
