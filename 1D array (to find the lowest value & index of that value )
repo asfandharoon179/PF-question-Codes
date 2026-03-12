@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    //Input
+    int mini[10];
+    cout << "Enter your array elements\n";
+    for (int i = 0; i <= 9; i++) {
+        cin >> mini[i];
+    }
+   // conditions
+    int min = mini[0];
+    int index = 0;
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (mini[i] <= min)
+        {
+            min = mini[i];
+            index = i;
+        }
+    }
+
+    cout << "Lowest  value: " << min << endl;
+    cout << "Index of Lowest value: " << index << endl;
+
+    return 0;
+}
