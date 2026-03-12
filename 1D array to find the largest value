@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+
+    int mini[10];
+    cout << "Enter your array elements\n";
+    for (int i = 0; i <= 9; i++) {
+        cin >> mini[i];
+    }
+    int max = mini[0];
+    int index = 0;
+
+    for (int i = 1; i < 10; i++)
+    {
+        if (mini[i] >= max)
+        {
+            max = mini[i];
+            index = i;
+        }
+    }
+
+    cout << "Highest value: " << max << endl;
+    cout << "Index of highest value: " << index << endl;
+
+    return 0;
+}
