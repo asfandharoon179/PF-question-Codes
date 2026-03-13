@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+int findMax(int arr1[5])
+//It is a simple comparsion of arrays
+{
+//Always start it with 0 as it is the first element of the array
+    int max = arr1[0];
+// A for loop that checks if the program is running through size of array
+    for (int y = 1; y < 5; y++)
+    {
+// it checks individual iteration (actually  here i is the index number)
+        if (arr1[y] > max)
+        {
+            max = arr1[y];
+        }
+    }
+//This return the max value in the form of integer.
+    return max;
+}
+//Very similar processor for the minimum but the condition is inversed
+int findMin(int arr1[5])
+{
+    int min = arr1[0];
+    for (int z = 1; z < 5; z++)
+    {
+        if (arr1[z] < min)
+        {
+            min = arr1[z];
+        }
+    }
+    return min;
+}
+int main()
+{
+    int arr1[5];
+//Input for the array.
+    cout << "Enter the elements of the array please\n";
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> arr1[i];
+    }
+//Here it calls the function we pass it the actual parameters
+    cout << "The minimum digit in the array is: " << findMin(arr1) << endl;
+    cout << "The maximum digit in the array is: " << findMax(arr1) << endl;
+    return 0;
+}
